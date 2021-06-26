@@ -3,8 +3,8 @@ const router = express.Router();
 
 const passport = require('passport')
 
-//const db = require('../database');
 const helpers = require('../public/lib/helpers');
+const database = require('../public/lib/database.json');
 
 router.post('/links/auth',(req, res)=>{
     res.render('layouts/Usuarios');
@@ -27,23 +27,26 @@ router.post('/validateUser', async(req, res) =>{
     //Validamos que los datos no vengan vacios
     if (email.length || password.length !== 0) {
 
-        //Realizamos consulta con las credenciales del usuario        
-        const savedPassword = await db.query(`SELECT * FROM cliente WHERE correo = '${email}'`);      
+        //Realizamos consulta con las credenciales del usuario       
+        for (i=0; i < database.length; i++){
+            if (database[i].email == email){
+                dataUser = database[i];
+            }
+        }      
 
-        if (savedPassword.length > 0) {
-            let savedPass = savedPassword[0].contrasena;
-            var match = await helpers.matchPassword(password, savedPass);
+        if (dataUser.passwordencrypted.length > 0) {
+            var match = await helpers.matchPassword(password, dataUser.passwordencrypted);
             
             if(match == true){
-                var nameUser = savedPassword[0].nombres;
+                var nameUser = dataUser.name;
                 if (typeof localStorage === "undefined" || localStorage === null) {
                     var LocalStorage = require('node-localstorage').LocalStorage;
                     localStorage = new LocalStorage('./scratch');
                   }
-                if( savedPassword[0].admin === 1){
+                if( dataUser.admin === 1){
                     localStorage.setItem('dataAdmin', nameUser);
                 }
-                localStorage.setItem('nameUser', JSON.stringify(savedPassword));
+                localStorage.setItem('nameUser', JSON.stringify(dataUser));
                 res.redirect('/perfil'); 
             }else{
                 //Si no son correctas se envia alerta
