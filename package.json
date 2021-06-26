@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "report-test": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "report-test": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 8f6eaf7a-3579-40ea-9f34-52e45c964db6"
   },
   "repository": {
     "type": "git",
