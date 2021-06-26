@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Producto 1",
+        "precio": 10000.0,
+        "unidades": 10,
+        "descripcion": "Esta es una descripción corta",
+        "caracteristicas": "Ninguna",
+        "descuento": 1000,
+        "ruta": "1"
+    },
+    {
+        "id": 2,
+        "nombre": "Producto 2",
+        "precio": 10000.0,
+        "unidades": 10,
+        "descripcion": "Esta es otra descripción corta",
+        "caracteristicas": "Banda 1 23",
+        "descuento": 500,
+        "ruta": ""
+    },
+    {
+        "id": 3,
+        "nombre": "Producto 3",
+        "precio": 10000.0,
+        "unidades": 20,
+        "descripcion": "Esta es una descripción corta",
+        "caracteristicas": " N/A",
+        "descuento": 1000,
+        "ruta": ""
+    }
+]
