@@ -22,7 +22,7 @@ helpers.localStorage = (data) => {
         var LocalStorage = require('node-localstorage').LocalStorage;
         localStorage = new LocalStorage('./scratch');
     }
-
+    console.log(localStorage.getItem(data))
     return localStorage.getItem(data);
     
 };

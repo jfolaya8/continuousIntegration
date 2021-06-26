@@ -36,7 +36,7 @@ app.use((rep, res, next)=>{
 });
 
 //Archivos controladores, para las peticiones (GET, POST) con el backend
-//app.use(require('./routes'));
+app.use(require('./routes'));
 app.use(require('./routes/links'));
 //app.use(require('./routes/controller_usuarios'));
 //app.use(require('./routes/controller_registro'));
