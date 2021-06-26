@@ -1,0 +1,235 @@
+<!--Finalización del menu de inicio con el fin de que sea parametrizable -->
+{{#if nameUser}}
+<li class="nav-item dropdown no-arrow imguser">
+  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{nameUser}}</span>
+    <img class="img-profile rounded-circle" src="/img/66068.jpg" style="height: 60px;">
+  </a>
+  <!-- Dropdown - User Information -->
+  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+    <a class="dropdown-item" href="/perfil">
+      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+      Perfil
+    </a>
+    <a class="dropdown-item" href="#">
+      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+      Settings
+    </a>
+    <a class="dropdown-item" href="#">
+      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+      Activity Log
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="/closeSession">
+      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+      Cerrar Sesion
+    </a>
+  </div>
+</li>
+{{else}}
+<li class="nav-item mx-0 mx-lg-1"><a href="/registro"><button type="button"
+      class="btn btn-outline-secondary btn-nav">REGISTRATE</button></a></li>
+<li class="nav-item mx-0 mx-lg-1"><a href="/login"><button type="button"
+      class="btn btn-dark btn-nav btn-back">INGRESAR</button></button></a></li>
+{{/if}}
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion style" id="accordionSidebar">
+
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+
+          <!-- Heading -->
+          <div class="sidebar-heading">
+            Interface
+          </div>
+
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <!-- Nav Item - Utilities Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="/pedidos">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Mis pedidos</span>
+            </a>
+          </li>
+
+          <!-- Nav Item - Utilities Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Favoritos</span>
+            </a>
+          </li>
+
+          <!-- Nav Item - Utilities Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="/misdatos">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Mis datos</span>
+            </a>
+          </li>
+
+          {{#if admin}}
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          <!-- Heading -->
+          <div class="sidebar-heading">
+            Opciones de Administrador
+          </div>
+
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="/admproducto">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Productos</span>
+            </a>
+          </li>
+
+          <!-- Nav Item - Utilities Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="/banner">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Banners</span>
+            </a>
+          </li>
+
+          <!-- Nav Item - Utilities Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Usuarios</span>
+            </a>
+          </li>
+          {{else}}
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+
+          {{/if}}
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          <!-- Sidebar Toggler (Sidebar) -->
+          <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+          </div>
+
+        </ul>
+      </div>
+
+      <div class="col-sm">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+          </div>
+        <div class="row">
+          <!-- Earnings (Monthly) Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Earnings (Monthly) Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Earnings (Monthly) Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-auto">
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                      </div>
+                      <div class="col">
+                        <div class="progress progress-sm mr-2">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pending Requests Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
