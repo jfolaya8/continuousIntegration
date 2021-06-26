@@ -3,7 +3,7 @@ const expres = require('express');
 const router = expres.Router();
 const path = require('path');
 
-//const db = require('../database');
+const productos = require('../public/lib/productos.json');
 const helpers = require('../public/lib/helpers');
 
 router.get('', async(req, res) => {
@@ -14,7 +14,7 @@ router.get('/index', async(req, res) => {
     let nameUser  = helpers.localStorage('nameUser');
     if(helpers.localStorage('nameUser')){
         nameUser = JSON.parse(nameUser);
-        nameUser = nameUser[0].nombres;
+        nameUser = nameUser.name;  
     }
     res.render('layouts/index', {nameUser});
 })
@@ -23,8 +23,7 @@ router.get('/index', async(req, res) => {
 router.get('/productos', async (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;
-    const productos = await db.query(`select * from producto`);    
+    nameUser = nameUser.name;  
     res.render('layouts/productos', {nameUser, productos});
     
 });
@@ -32,7 +31,7 @@ router.get('/productos', async (req, res)=>{
 router.get('/about', async(req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     nameUser = JSON.parse(nameUser);
-    //nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;    
     res.render('layouts/about', {nameUser});
 
 });
@@ -40,7 +39,7 @@ router.get('/about', async(req, res)=>{
 router.get('/contactenos', (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     nameUser = JSON.parse(nameUser);
-    //nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;    
     res.render('layouts/contactenos', {nameUser});
 });
 
@@ -48,7 +47,7 @@ router.get('/perfil', (req, res) =>{
     let nameUser  = helpers.localStorage('nameUser');
     let admin = helpers.localStorage('dataAdmin');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;  
     res.render('layouts/perfil', {nameUser, admin});
 })
 
@@ -75,7 +74,7 @@ router.get('/misdatos', async (req, res)=>{
     let nameUser = helpers.localStorage('nameUser');
     let admin = helpers.localStorage('dataAdmin');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;
+    nameUser = nameUser.name;  
     datauser = JSON.parse(datauser);
     res.render('layouts/misdatos', {nameUser, admin, datauser});
 });
@@ -84,7 +83,7 @@ router.get('/admproducto', async (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     let admin = helpers.localStorage('dataAdmin');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;   
     const productos = await db.query(`select idProducto, nombreProducto, unidades,  precioUnitario, descripcion   from producto`);
     res.render('layouts/admproducto', {nameUser, admin, productos});
 
@@ -94,7 +93,7 @@ router.get('/pedidos', (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     let admin = helpers.localStorage('dataAdmin');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;   
     res.render('layouts/pedidos', {nameUser, admin});
 });
 
@@ -102,7 +101,7 @@ router.get('/banner', (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     let admin = helpers.localStorage('dataAdmin');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;    
     res.render('layouts/banner', {nameUser, admin});
 });
 
@@ -110,7 +109,7 @@ router.get('/form-add', (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     let admin = helpers.localStorage('dataAdmin');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    nameUser = nameUser.name;    
     res.render('layouts/form-add', {nameUser, admin});
 });
 
@@ -118,7 +117,7 @@ router.get('/checkout', (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     if(helpers.localStorage('nameUser')){
         nameUser = JSON.parse(nameUser);
-        nameUser = nameUser[0].nombres;
+        nameUser = nameUser.name;  
     }
     res.render('layouts/checkout', {nameUser});
 });

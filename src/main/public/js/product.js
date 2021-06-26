@@ -14,9 +14,9 @@ function addCar(id){
 
   //Busco en el almacenado local el producto
   for (const name in local) {
-    if (local[name].idProducto == id) {
-      let nombre = local[name].nombreProducto;
-      let precios = local[name].precioUnitario;
+    if (local[name].id == id) {
+      let nombre = local[name].nombre;
+      let precios = local[name].precio;
       var eliminado = document.getElementById("irCarrito");
       var contador = document.getElementById("contador").innerHTML;
       eliminado.parentNode.removeChild(eliminado);
