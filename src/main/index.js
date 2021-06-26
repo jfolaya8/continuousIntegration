@@ -39,7 +39,7 @@ app.use((rep, res, next)=>{
 app.use(require('./routes'));
 app.use(require('./routes/links'));
 //app.use(require('./routes/controller_usuarios'));
-//app.use(require('./routes/controller_registro'));
+app.use(require('./routes/controller_registro'));
 //app.use(require('./routes/controller_perfil'));
 //app.use(require('./routes/controller_producto'));
 
