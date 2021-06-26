@@ -29,10 +29,10 @@ router.get('/productos', async (req, res)=>{
     
 });
 
-router.get('/about', (req, res)=>{
+router.get('/about', async(req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    //nameUser = nameUser[0].nombres;  
     res.render('layouts/about', {nameUser});
 
 });
@@ -40,7 +40,7 @@ router.get('/about', (req, res)=>{
 router.get('/contactenos', (req, res)=>{
     let nameUser  = helpers.localStorage('nameUser');
     nameUser = JSON.parse(nameUser);
-    nameUser = nameUser[0].nombres;  
+    //nameUser = nameUser[0].nombres;  
     res.render('layouts/contactenos', {nameUser});
 });
 

@@ -1,0 +1,76 @@
+<!--Finalización del menu de inicio con el fin de que sea parametrizable -->
+{{#if nameUser}}
+<li class="nav-item dropdown no-arrow imguser">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{nameUser}}</span>
+        <img class="img-profile rounded-circle" src="/img/66068.jpg" style="height: 60px;">
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="/perfil">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            Perfil
+        </a>
+        <a class="dropdown-item" href="#">
+            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+            Settings
+        </a>
+        <a class="dropdown-item" href="#">
+            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+            Activity Log
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Cerrar Sesion
+        </a>
+    </div>
+</li>
+{{else}}
+<li class="nav-item mx-0 mx-lg-1"><a href="/registro"><button type="button"
+            class="btn btn-outline-secondary btn-nav">REGISTRATE</button></a></li>
+<li class="nav-item mx-0 mx-lg-1"><a href="/login"><button type="button"
+            class="btn btn-dark btn-nav btn-back">INGRESAR</button></button></a></li>
+{{/if}}
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="masthead">
+    <div class="panel-productos">
+        <h2>Sobre Nosotros</h2>
+    </div>
+
+    <div class="float-container-left">
+        <div>
+            <h3 id="titulosobre"> Sobre Nosotros </h3>
+            <p id="parrafosobre"  >Llevamos mas de 5 años en el mercado tecnologico, ofrenciendo productos de
+                ultima tecnologia y con los mejores estandares de calidad, brindado siempre un buen
+                servicio a todos nuestros compradores y calidad en nuestros.</p>
+        </div>
+    </div>
+    <div class="float-container-left">
+        <div>
+            <h3 id="titulosobre"> Mision </h3>
+            <p id="parrafosobre">Somos una empresa que se dedica a la comercializacion de
+              productos
+              tecnologicos de alta calidad, con el onjetivo de satisfacer todas las necesidades de
+              nuestros clientes creando fidelidad y brindando la mejor calidad en servicio.</p>
+
+        </div>
+    </div>
+    <div class="float-container-left">
+        <div>
+            <h3 id="titulosobre"> Vision </h3>
+            <p id="parrafosobre">Para el año 2021 queremos ser el ecommers mas amplio a nivel colombia,
+              brindando productos a la medida y los ultimos avances de tecnologia, ademas de brindar
+              el servicio de entrega a nivel nacional, ampliando asi nuestra cobertura satisfaciendo
+              todas las necesidades de nuestros clientes con la mejor calidad en servicio.</p>
+
+        </div>
+    </div>
+
+</div>
+</div>
